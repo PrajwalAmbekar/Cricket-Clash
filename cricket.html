@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="cricket.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/364/502/original/cricket-logo-vector.png"
+                alt="">
+            <span>Cricket.com</span>
+        </div>
+        <div class="main">
+            <h1 class="main">Champions Thropy 2024</h1>
+        </div>
+        <div class="profile">
+            <img src="https://th.bing.com/th/id/OIP.jc-ETlluKaSZY30TtPW3uAHaHa?rs=1&pid=ImgDetMain" alt="">
+            <span>Prajwal Ambekar</span>
+            <i class='bx bx-caret-down-circle'></i>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="game-page">
+            <div class="user">
+                <h3>User's-Choice</h3>
+            </div>
+            <div class="btns-block">
+                <div class="top-btns">
+                    <button class="btn"
+                        onclick="computerChoice=generateComputerChoice(); 
+                    resultMsg=getResult('Bat',computerChoice);result=displayResult('Bat',computerChoice,resultMsg)"><img
+                            src="https://th.bing.com/th?id=OIP.2wKuJPNgJMhk1-jkCrWuLwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                            alt="">
+                    </button>
+                    <button class="btn"
+                        onclick=" computerChoice=generateComputerChoice(); 
+                    resultMsg=getResult('Ball',computerChoice);result=displayResult('Ball',computerChoice,resultMsg)"><img
+                            src="https://th.bing.com/th?id=OIP.9yimtRLGFJzuKOaWGz-EOAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                            alt=""></button>
+                    <button class="btn"
+                        onclick=" computerChoice=generateComputerChoice(); 
+                    resultMsg=getResult('Stump',computerChoice);result=displayResult('Stump',computerChoice,resultMsg)"><img
+                            src="https://th.bing.com/th?id=OIP.Ej_REBV6DXyw-nSfaSIGxgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                            alt=""></button>
+                </div>
+                <div class="bottom-btns">
+                    <button class="btn" id="btn4" onclick=" localStorage.clear() ;
+                    resetScore()">Re-game</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-box">
+            <div class="rules">
+                <h2>Rules Of the Game</h2>
+            </div>
+            <ul>
+                <li>If the user chooses bat and the computer chooses ball, the user wins the game.</li>
+                <li>If the user chooses ball and the computer chooses bat, the computer wins the match.</li>
+                <li>If the user chooses ball and the computer chooses stump, the user wins the game.</li>
+                <li>If the user chooses stump and the computer chooses ball, the computer wins the game.</li>
+                <li>If the user chooses bat and the computer chooses stump, the computer wins the match.</li>
+                <li>If the user chooses stump and the computer chooses bat, the user wins the game.</li>
+            </ul>
+        </div>
+        <div class="score-block-1">
+            <table id="Choices-table">
+                <thead>
+                    <tr>
+                        <th>User Choice</th>
+                        <th>Computer-Choice</th>
+                        <th>Match-result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="user-move">
+                        </td>
+                        <td id="computer-move">
+                        </td>
+                        <td id="result"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="score-block-2">
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>Matches-played</th>
+                        <th>Matches-Won</th>
+                        <th>Matches-Lost</th>
+                        <th>Matches-Tie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="Matches-played"></td>
+                        <td id="win"></td>
+                        <td id="lost"></td>
+                        <td id="tie"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="cricket.js"></script>
+</body>
+
+</html>
