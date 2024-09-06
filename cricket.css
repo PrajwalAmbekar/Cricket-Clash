@@ -182,6 +182,7 @@ header {
     border-radius: 0rem;
     padding-bottom:0.5rem;
     font-size: 1.7rem;
+    transition-duration:200ms;
 }
 .side-box h2:hover{
     border-bottom: 2px solid #fec020;
